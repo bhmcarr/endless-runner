@@ -7,27 +7,14 @@ extends Node2D
 
 var rng = RandomNumberGenerator.new()
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_spawn_timer_timeout() -> void:
 	var rand_selection = rng.randi_range(0, 2)
 	var obstacle_instance
 	
 	match rand_selection:
-		0:
-			obstacle_instance = obstacle_s.instantiate()
-		1:
-			obstacle_instance = obstacle_m.instantiate()
-		2:
-			obstacle_instance = obstacle_l.instantiate()
+		0: obstacle_instance = obstacle_s.instantiate()
+		1: obstacle_instance = obstacle_m.instantiate()
+		2: obstacle_instance = obstacle_l.instantiate()
 	
 	obstacle_instance.position = self.global_position
 	

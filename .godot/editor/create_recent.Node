@@ -1,0 +1,13 @@
+Button
+CollisionShape2D
+Area2D
+TextureRect
+Label
+CanvasLayer
+Timer
+TileMapLayer
+AnimatableBody2D
+CharacterBody2D
+ColorRect
+AnimatedSprite2D
+TileMap
