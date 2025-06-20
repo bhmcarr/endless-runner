@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcol3s84hs57e"]
+
+[ext_resource type="Script" uid="uid://be1rlfphi7xmc" path="res://Scenes/player.gd" id="1_v0iea"]
+[ext_resource type="SpriteFrames" uid="uid://bmtuja4h5117l" path="res://Assets/SpriteFrames/player.tres" id="2_cvnsp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
+size = Vector2(15, 18)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_v0iea")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = ExtResource("2_cvnsp")
+animation = &"fall"
+autoplay = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 3)
+shape = SubResource("RectangleShape2D_cvnsp")
