@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4uvrc28hbtpk"]
+
+[ext_resource type="Script" uid="uid://bxdltyhc2jlpl" path="res://Scenes/score_zone.gd" id="1_0jdsr"]
+
+[node name="ScoreZone" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_0jdsr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

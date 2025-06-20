@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://4fwpyge0yfvj"]
+
+[ext_resource type="Script" uid="uid://k7pm1ngnufnt" path="res://Scripts/obstacle.gd" id="1_0ij4r"]
+[ext_resource type="TileSet" uid="uid://1ku7qk24scw0" path="res://Assets/Tilesets/obstacles.tres" id="2_5if12"]
+[ext_resource type="PackedScene" uid="uid://b4uvrc28hbtpk" path="res://Scenes/score_zone.tscn" id="3_5if12"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_be4t0"]
+size = Vector2(24, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_086kh"]
+size = Vector2(24, 195)
+
+[node name="ObstacleS" type="AnimatableBody2D"]
+collision_mask = 2
+script = ExtResource("1_0ij4r")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 253, 255, 0, 0, 1, 0, 0, 0, 0, 0)
+tile_set = ExtResource("2_5if12")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, -27)
+shape = SubResource("RectangleShape2D_be4t0")
+
+[node name="ScoreZone" parent="." instance=ExtResource("3_5if12")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreZone"]
+position = Vector2(12, -151.5)
+shape = SubResource("RectangleShape2D_086kh")

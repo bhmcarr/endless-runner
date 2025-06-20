@@ -1,11 +1,14 @@
 extends Node2D
+@onready var score: Label = $CanvasLayer/Score
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	_scan_for_score_zones()
+	
+func _scan_for_score_zones():
+	var score_zones = get_tree().get_nodes_in_group("score_zones")
+	for zone in score_zones:
+		if !zone.scored.has_connections():
+			zone.scored.connect(_handle_score_zone_entered)
+
+func _handle_score_zone_entered(points_awarded: int) -> void:
+	score.add_score(points_awarded)

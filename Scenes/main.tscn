@@ -1,20 +1,51 @@
-[gd_scene load_steps=4 format=4 uid="uid://2lavcameiv6l"]
+[gd_scene load_steps=10 format=4 uid="uid://2lavcameiv6l"]
 
 [ext_resource type="Script" uid="uid://dj51k4n037c7t" path="res://Scenes/main.gd" id="1_jjgbg"]
+[ext_resource type="FontFile" uid="uid://6rm3llceddar" path="res://Assets/Fonts/QuinqueFive.ttf" id="2_21xkr"]
+[ext_resource type="Texture2D" uid="uid://0avrtply72ms" path="res://Assets/bg.png" id="2_344ge"]
 [ext_resource type="TileSet" uid="uid://chfmuuu282n6" path="res://Assets/Tilesets/terrain.tres" id="2_bo1nx"]
+[ext_resource type="Script" uid="uid://sbni38okqq30" path="res://Scripts/score.gd" id="3_6bp64"]
 [ext_resource type="PackedScene" uid="uid://bcol3s84hs57e" path="res://Scenes/player.tscn" id="3_8gbba"]
+[ext_resource type="Script" uid="uid://c2irqucs4h2nd" path="res://Scripts/terrain_scroller.gd" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://7a2ityaq2nyt" path="res://Scenes/obstacle_spawner.tscn" id="5_kry3j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6bp64"]
+font = ExtResource("2_21xkr")
+font_color = Color(0.188235, 0.384314, 0.188235, 1)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jjgbg")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_344ge")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Score" type="Label" parent="CanvasLayer"]
+offset_left = 2.0
+offset_right = 160.0
+offset_bottom = 23.0
+size_flags_horizontal = 4
+text = "0"
+label_settings = SubResource("LabelSettings_6bp64")
+script = ExtResource("3_6bp64")
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_right = 160.0
 offset_bottom = 144.0
 color = Color(0.545098, 0.67451, 0.0588235, 1)
 
 [node name="Player" parent="." instance=ExtResource("3_8gbba")]
-position = Vector2(14, 56)
+position = Vector2(59, 44)
+
+[node name="ObstacleSpawner" parent="." instance=ExtResource("5_kry3j")]
+position = Vector2(176, 136)
 
 [node name="Terrain" type="TileMapLayer" parent="."]
+z_index = 10
 tile_map_data = PackedByteArray("AAATABEAAAABAAAAAAASABEAAAABAAAAAAARABEAAAABAAAAAAAQABEAAAABAAAAAAAPABEAAAABAAAAAAAOABEAAAABAAAAAAANABEAAAABAAAAAAAMABEAAAABAAAAAAALABEAAAABAAAAAAAKABEAAAABAAAAAAAJABEAAAABAAAAAAAIABEAAAABAAAAAAAHABEAAAABAAAAAAAGABEAAAABAAAAAAAFABEAAAABAAAAAAAEABEAAAABAAAAAAADABEAAAABAAAAAAACABEAAAABAAAAAAABABEAAAABAAAAAAAAABEAAAABAAAAAAATABAAAAAAAAAAAAASABAAAAAAAAAAAAARABAAAAAAAAAAAAAQABAAAAAAAAAAAAAPABAAAAAAAAAAAAAOABAAAAAAAAAAAAANABAAAAAAAAAAAAAMABAAAAAAAAAAAAALABAAAAAAAAAAAAAKABAAAAAAAAAAAAAJABAAAAAAAAAAAAAIABAAAAAAAAAAAAAHABAAAAAAAAAAAAAGABAAAAAAAAAAAAAFABAAAAAAAAAAAAAEABAAAAAAAAAAAAADABAAAAAAAAAAAAACABAAAAAAAAAAAAABABAAAAAAAAAAAAAAABAAAAAAAAAAAAD//xAAAAAAAAAAAAD//xEAAAABAAAAAAAUABAAAAAAAAAAAAAUABEAAAABAAAAAAAVABAAAAAAAAAAAAAWABAAAAAAAAAAAAD+/xAAAAAAAAAAAAD9/xAAAAAAAAAAAAD8/xAAAAAAAAAAAAAXABAAAAAAAAAAAAAXABEAAAABAAAAAAAWABEAAAABAAAAAAAVABEAAAABAAAAAAD+/xEAAAABAAAAAAD9/xEAAAABAAAAAAD8/xEAAAABAAAAAAA=")
 tile_set = ExtResource("2_bo1nx")
+script = ExtResource("4_jjvhh")

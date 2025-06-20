@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnq2y5lt5nubv"]
+
+[ext_resource type="Script" uid="uid://k7pm1ngnufnt" path="res://Scripts/obstacle.gd" id="1_suo03"]
+[ext_resource type="TileSet" uid="uid://1ku7qk24scw0" path="res://Assets/Tilesets/obstacles.tres" id="2_poxp3"]
+[ext_resource type="PackedScene" uid="uid://b4uvrc28hbtpk" path="res://Scenes/score_zone.tscn" id="3_poxp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_be4t0"]
+size = Vector2(24, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pixik"]
+size = Vector2(24, 217)
+
+[node name="ObstacleS" type="AnimatableBody2D"]
+collision_mask = 2
+script = ExtResource("1_suo03")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 253, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 252, 255, 0, 0, 1, 0, 0, 0, 0, 0)
+tile_set = ExtResource("2_poxp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, -39)
+shape = SubResource("RectangleShape2D_be4t0")
+
+[node name="ScoreZone" parent="." instance=ExtResource("3_poxp3")]
+position = Vector2(12, -39)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreZone"]
+position = Vector2(0, -147.5)
+shape = SubResource("RectangleShape2D_pixik")
