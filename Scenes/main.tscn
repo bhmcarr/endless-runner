@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://2lavcameiv6l"]
+[gd_scene load_steps=11 format=4 uid="uid://2lavcameiv6l"]
 
 [ext_resource type="Script" uid="uid://dj51k4n037c7t" path="res://Scenes/main.gd" id="1_jjgbg"]
 [ext_resource type="FontFile" uid="uid://6rm3llceddar" path="res://Assets/Fonts/QuinqueFive.ttf" id="2_21xkr"]
@@ -12,6 +12,9 @@
 [sub_resource type="LabelSettings" id="LabelSettings_6bp64"]
 font = ExtResource("2_21xkr")
 font_color = Color(0.188235, 0.384314, 0.188235, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_344ge"]
+normal = Vector2(1, 0)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jjgbg")
@@ -49,3 +52,13 @@ z_index = 10
 tile_map_data = PackedByteArray("AAATABEAAAABAAAAAAASABEAAAABAAAAAAARABEAAAABAAAAAAAQABEAAAABAAAAAAAPABEAAAABAAAAAAAOABEAAAABAAAAAAANABEAAAABAAAAAAAMABEAAAABAAAAAAALABEAAAABAAAAAAAKABEAAAABAAAAAAAJABEAAAABAAAAAAAIABEAAAABAAAAAAAHABEAAAABAAAAAAAGABEAAAABAAAAAAAFABEAAAABAAAAAAAEABEAAAABAAAAAAADABEAAAABAAAAAAACABEAAAABAAAAAAABABEAAAABAAAAAAAAABEAAAABAAAAAAATABAAAAAAAAAAAAASABAAAAAAAAAAAAARABAAAAAAAAAAAAAQABAAAAAAAAAAAAAPABAAAAAAAAAAAAAOABAAAAAAAAAAAAANABAAAAAAAAAAAAAMABAAAAAAAAAAAAALABAAAAAAAAAAAAAKABAAAAAAAAAAAAAJABAAAAAAAAAAAAAIABAAAAAAAAAAAAAHABAAAAAAAAAAAAAGABAAAAAAAAAAAAAFABAAAAAAAAAAAAAEABAAAAAAAAAAAAADABAAAAAAAAAAAAACABAAAAAAAAAAAAABABAAAAAAAAAAAAAAABAAAAAAAAAAAAD//xAAAAAAAAAAAAD//xEAAAABAAAAAAAUABAAAAAAAAAAAAAUABEAAAABAAAAAAAVABAAAAAAAAAAAAAWABAAAAAAAAAAAAD+/xAAAAAAAAAAAAD9/xAAAAAAAAAAAAD8/xAAAAAAAAAAAAAXABAAAAAAAAAAAAAXABEAAAABAAAAAAAWABEAAAABAAAAAAAVABEAAAABAAAAAAD+/xEAAAABAAAAAAD9/xEAAAABAAAAAAD8/xEAAAABAAAAAAA=")
 tile_set = ExtResource("2_bo1nx")
 script = ExtResource("4_jjvhh")
+
+[node name="DangerZone" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DangerZone"]
+position = Vector2(-14, 122)
+shape = SubResource("WorldBoundaryShape2D_344ge")
+
+[connection signal="body_entered" from="DangerZone" to="." method="_on_danger_zone_body_entered"]
