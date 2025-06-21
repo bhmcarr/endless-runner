@@ -1,10 +1,10 @@
-res://Assets/SpriteFrames/player.tres::4a2469e6d74b4efaea970b47d2b8be25::1750431947::res://.godot/exported/133200997/export-c59c18f44994c2d8ed74d502953aa0e2-player.res
+res://Assets/SpriteFrames/player.tres::4a2469e6d74b4efaea970b47d2b8be25::1750456667::res://.godot/exported/133200997/export-c59c18f44994c2d8ed74d502953aa0e2-player.res
 res://Assets/Tilesets/obstacles.tres::b29b7073758a4e9fff38e175dc1c60cc::1750441383::res://.godot/exported/133200997/export-56f98b7c9811b5453550bf46256b3c94-obstacles.res
-res://Assets/Tilesets/terrain.tres::b1993c9da97cd1a02205e81ec1c2e1f4::1750432345::res://.godot/exported/133200997/export-888d1a083015ba1bb891ea9fa958c104-terrain.res
-res://Scenes/main.tscn::ad646e4113764f5baf367518195997fc::1750442549::res://.godot/exported/133200997/export-2ddd04d543d5858e7f20c9299a8b5096-main.scn
+res://Assets/Tilesets/terrain.tres::b1993c9da97cd1a02205e81ec1c2e1f4::1750456667::res://.godot/exported/133200997/export-888d1a083015ba1bb891ea9fa958c104-terrain.res
+res://Scenes/main.tscn::ad646e4113764f5baf367518195997fc::1750480083::res://.godot/exported/133200997/export-2ddd04d543d5858e7f20c9299a8b5096-main.scn
 res://Scenes/obstacle_s.tscn::a92604ee8f06809d77d0923769a8e798::1750441965::res://.godot/exported/133200997/export-5023254a2c5833f4bacc12935ed1d794-obstacle_s.scn
-res://Scenes/obstacle_spawner.tscn::e8363817f9eba0f22e8d32b1c3f558a4::1750442549::res://.godot/exported/133200997/export-5ec0378befe89d8279bb73909fa49e11-obstacle_spawner.scn
-res://Scenes/player.tscn::f534c50caa14cc9acc56b2acb232973b::1750442549::res://.godot/exported/133200997/export-1753c997600d68ab5d20ae99fddb15c6-player.scn
+res://Scenes/obstacle_spawner.tscn::e8363817f9eba0f22e8d32b1c3f558a4::1750480083::res://.godot/exported/133200997/export-5ec0378befe89d8279bb73909fa49e11-obstacle_spawner.scn
+res://Scenes/player.tscn::f534c50caa14cc9acc56b2acb232973b::1750480083::res://.godot/exported/133200997/export-1753c997600d68ab5d20ae99fddb15c6-player.scn
 res://Scenes/obstacle_m.tscn::2b529647d332517bc85ee9ddcaf9b97c::1750441965::res://.godot/exported/133200997/export-a68d0d9d0e3bf1b3c8849152a9a00dfd-obstacle_m.scn
 res://Scenes/obstacle_l.tscn::3002c79f559d39b07421f0e79177f010::1750441965::res://.godot/exported/133200997/export-313528fcfcde63078a8ac08f2f6433f0-obstacle_l.scn
-res://Scenes/score_zone.tscn::fe4820e97b076c894574ff2bdafefa56::1750442549::res://.godot/exported/133200997/export-52c30d264e81eea005c36ae4d3cb177c-score_zone.scn
+res://Scenes/score_zone.tscn::fe4820e97b076c894574ff2bdafefa56::1750480083::res://.godot/exported/133200997/export-52c30d264e81eea005c36ae4d3cb177c-score_zone.scn

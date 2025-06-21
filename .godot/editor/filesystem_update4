@@ -1,8 +1,8 @@
 res://Scenes/main.tscn
 res://Assets/Tilesets/terrain.tres
 res://Assets/SpriteFrames/player.tres
-res://Scenes/obstacle_spawner.gd
 res://Scenes/player.tscn
 res://Scenes/obstacle_spawner.tscn
 res://Scenes/score_zone.tscn
+res://Scenes/main.gd
 res://Scenes/player.gd

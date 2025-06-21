@@ -13,11 +13,14 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		jump()
 
 	move_and_slide()
 	_handle_animation()
 	
+func jump() -> void:
+	if is_on_floor():
+		velocity.y = JUMP_VELOCITY
 	
 func _handle_animation():
 	if not is_on_floor() && velocity.y > 0:
