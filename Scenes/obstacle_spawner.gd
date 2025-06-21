@@ -8,6 +8,9 @@ extends Node2D
 var rng = RandomNumberGenerator.new()
 
 func _on_spawn_timer_timeout() -> void:
+	# randomly switch time between obstacle spawns
+	spawn_timer.wait_time = rng.randf_range(0.33, 2)
+	
 	var rand_selection = rng.randi_range(0, 2)
 	var obstacle_instance
 	
