@@ -6,3 +6,8 @@ res://Scenes/obstacle_spawner.tscn
 res://Scenes/score_zone.tscn
 res://Scenes/main.gd
 res://Scenes/player.gd
+res://Assets/Tilesets/ui.tres
+res://Scenes/UI/retry_menu.tscn
+res://Scenes/UI/retry_menu.gd
+res://Scripts/obstacle.gd
+res://Scripts/score.gd

@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bbic1gw144xts"]
+
+[ext_resource type="FontFile" uid="uid://6rm3llceddar" path="res://Assets/Fonts/QuinqueFive.ttf" id="1_p18n6"]
+
+[resource]
+font = ExtResource("1_p18n6")
+font_size = 8
+font_color = Color(0.188235, 0.384314, 0.188235, 1)
