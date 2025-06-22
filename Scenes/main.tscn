@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://2lavcameiv6l"]
+[gd_scene load_steps=15 format=4 uid="uid://2lavcameiv6l"]
 
 [ext_resource type="Script" uid="uid://dj51k4n037c7t" path="res://Scenes/main.gd" id="1_jjgbg"]
 [ext_resource type="FontFile" uid="uid://6rm3llceddar" path="res://Assets/Fonts/QuinqueFive.ttf" id="2_21xkr"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://c2irqucs4h2nd" path="res://Scripts/terrain_scroller.gd" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://7a2ityaq2nyt" path="res://Scenes/obstacle_spawner.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://ctwiqgclke4qk" path="res://Scenes/UI/retry_menu.tscn" id="5_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://cpkjxy6todtvl" path="res://Scenes/gameplay_message.tscn" id="6_6iyac"]
 [ext_resource type="PackedScene" uid="uid://d0mfd66keqq2u" path="res://Scenes/powerup_spawner.tscn" id="9_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://dnh540la8wrsr" path="res://Scenes/flight_powerup.tscn" id="10_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://ctvvem5xhapbj" path="res://Scenes/powerup_spawn_point.tscn" id="10_hptm8"]
@@ -49,6 +50,8 @@ offset_right = 16.0
 offset_bottom = 24.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="GameplayMessage" parent="CanvasLayer" instance=ExtResource("6_6iyac")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false

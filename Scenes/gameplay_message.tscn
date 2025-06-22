@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpkjxy6todtvl"]
+
+[ext_resource type="LabelSettings" uid="uid://bbic1gw144xts" path="res://Assets/label_settings.tres" id="1_v80um"]
+[ext_resource type="Script" uid="uid://kjet2qwdffdj" path="res://Scenes/gameplay_message.gd" id="2_q7tsd"]
+
+[sub_resource type="Animation" id="Animation_v80um"]
+resource_name = "flash_text"
+length = 0.05
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q7tsd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tcbbh"]
+_data = {
+&"RESET": SubResource("Animation_q7tsd"),
+&"flash_text": SubResource("Animation_v80um")
+}
+
+[node name="GameplayMessage" type="Label"]
+offset_left = 8.0
+offset_top = 24.0
+offset_right = 152.0
+offset_bottom = 47.0
+text = "hello world!!"
+label_settings = ExtResource("1_v80um")
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("2_q7tsd")
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_tcbbh")
+}
+autoplay = "flash_text"
+
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]

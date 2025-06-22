@@ -4,6 +4,7 @@ extends Node2D
 @onready var player: CharacterBody2D = null
 @onready var retry_menu: Control = $CanvasLayer/RetryMenu
 @onready var player_spawn: Marker2D = $PlayerSpawn
+@onready var gameplay_message: Label = $CanvasLayer/GameplayMessage
 
 var player_scene: PackedScene = load("res://Scenes/player.tscn")
 
@@ -17,6 +18,13 @@ func _ready():
 
 func _process(delta: float) -> void:
 	_scan_for_score_zones()
+	_scan_for_powerups()
+	
+func _scan_for_powerups():
+	var powerups = get_tree().get_nodes_in_group("powerups")
+	for powerup in powerups:
+		if !powerup.powerup_collected.has_connections():
+			powerup.powerup_collected.connect(_handle_powerup_collected)
 	
 func _scan_for_score_zones():
 	var score_zones = get_tree().get_nodes_in_group("score_zones")
@@ -35,6 +43,9 @@ func _input(event:InputEvent) -> void:
 func _handle_score_zone_entered(points_awarded: int) -> void:
 	current_score += 1
 	score.update_score(current_score)
+	
+func _handle_powerup_collected(new_message: String):
+	gameplay_message.show_message(new_message)
 
 func _on_danger_zone_body_entered(body: Node2D) -> void:
 	_start_game_over()
