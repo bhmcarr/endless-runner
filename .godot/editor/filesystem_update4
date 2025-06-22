@@ -12,3 +12,4 @@ res://Scenes/player.tscn
 res://Scenes/obstacle_spawner.tscn
 res://Scenes/score_zone.tscn
 res://Scenes/UI/retry_menu.tscn
+res://Scripts/score.gd

@@ -9,7 +9,7 @@ var player_scene: PackedScene = load("res://Scenes/player.tscn")
 
 var is_game_over: bool = false
 
-# TODO: pull current score up from label into main scene
+var current_score: int = 0
 var best_score: int = 0
 
 func _ready():
@@ -26,24 +26,24 @@ func _scan_for_score_zones():
 
 # Handle clicks
 func _input(event:InputEvent) -> void:
-	if event is InputEventMouseButton || event is InputEventKey:
-		if event.button_index == MOUSE_BUTTON_LEFT || event.is_action_just_pressed("ui_accept"):
-			if !is_game_over:
-				player.jump()
-			else:
-				_restart_game()
+	if (event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT) || (event is InputEventKey && event.is_action_pressed("ui_accept")):
+		if !is_game_over:
+			player.jump()
+		else:
+			_restart_game()
 
 func _handle_score_zone_entered(points_awarded: int) -> void:
-	score.add_score(points_awarded)
+	current_score += 1
+	score.update_score(current_score)
 
 func _on_danger_zone_body_entered(body: Node2D) -> void:
 	_start_game_over()
 	
 func _start_game_over():
 	is_game_over = true
-	if score.score > best_score:
-		best_score = score.score
-	retry_menu.show_score(score.score, best_score)
+	if current_score > best_score:
+		best_score = current_score
+	retry_menu.show_score(current_score, best_score)
 	
 func _spawn_player():
 	if player != null:
@@ -63,4 +63,5 @@ func _restart_game():
 	get_tree().call_group("obstacles", "queue_free")
 	
 	# reset score
+	current_score = 0
 	score.reset_score()

@@ -3,12 +3,10 @@ extends Label
 var score: int = 0
 
 func _ready():
-	text = str(score)
+	reset_score()
 
-func add_score(amount: int) -> void:
-	score += amount
-	text = str(score)
+func update_score(new_score: int):
+	text = str(new_score)
 	
 func reset_score():
-	score = 0
-	text = str(0)
+	text = "0"
