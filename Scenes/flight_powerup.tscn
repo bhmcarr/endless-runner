@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnh540la8wrsr"]
+
+[ext_resource type="Texture2D" uid="uid://bjnj1bgvxo77s" path="res://Assets/flight.png" id="1_2lcih"]
+[ext_resource type="Script" uid="uid://cqij6ub2ukkd2" path="res://Scenes/flight_powerup.gd" id="1_r36sl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r36sl"]
+radius = 9.0
+
+[node name="FlightPowerup" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_r36sl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_2lcih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_r36sl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

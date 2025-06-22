@@ -15,9 +15,14 @@ script = ExtResource("1_v0iea")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)
 sprite_frames = ExtResource("2_cvnsp")
-animation = &"fall"
+animation = &"jump_fly"
 autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, 3)
 shape = SubResource("RectangleShape2D_cvnsp")
+
+[node name="PowerupTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="PowerupTimer" to="." method="_on_powerup_timer_timeout"]

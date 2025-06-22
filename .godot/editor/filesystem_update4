@@ -13,3 +13,9 @@ res://Scenes/obstacle_spawner.tscn
 res://Scenes/score_zone.tscn
 res://Scenes/UI/retry_menu.tscn
 res://Scripts/score.gd
+res://Scenes/flight_powerup.tscn
+res://Scenes/flight_powerup.gd
+res://Scenes/powerup_spawner.tscn
+res://Scenes/powerup_spawner.gd
+res://Scenes/powerup_spawn_point.tscn
+res://Scenes/powerup_spawn_point.gd

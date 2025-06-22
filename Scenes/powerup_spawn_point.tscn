@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctvvem5xhapbj"]
+
+[ext_resource type="Script" uid="uid://ywuh0yjajts2" path="res://Scenes/powerup_spawn_point.gd" id="1_407dl"]
+
+[node name="PowerupSpawnPoint" type="Marker2D"]
+script = ExtResource("1_407dl")
