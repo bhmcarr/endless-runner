@@ -24,10 +24,10 @@ func _scan_for_score_zones():
 		if !zone.scored.has_connections():
 			zone.scored.connect(_handle_score_zone_entered)
 
-# Handle clicks			
+# Handle clicks
 func _input(event:InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
+	if event is InputEventMouseButton || event is InputEventKey:
+		if event.button_index == MOUSE_BUTTON_LEFT || event.is_action_just_pressed("ui_accept"):
 			if !is_game_over:
 				player.jump()
 			else:
