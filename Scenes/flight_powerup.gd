@@ -7,7 +7,7 @@ signal powerup_collected(message: String)
 func _ready() -> void:
 	add_to_group("powerups")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	global_position.x -= 1
 	counter += 1
 	

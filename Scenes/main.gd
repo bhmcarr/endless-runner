@@ -21,7 +21,7 @@ func _ready():
 	_spawn_player()
 	life_counter.update_life_amount(lives)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	_scan_for_score_zones()
 	_scan_for_powerups()
 	
@@ -48,7 +48,7 @@ func _input(event:InputEvent) -> void:
 			_restart_game()
 
 func _handle_score_zone_entered(points_awarded: int) -> void:
-	current_score += 1 * multiplier
+	current_score += points_awarded * multiplier
 	score.update_score(current_score)
 
 func _handle_powerup_collected(new_message: String, action: String):
@@ -60,7 +60,7 @@ func _handle_multiplier_collected(amount: int):
 	multiplier += amount
 	multiplier_label.text = "x" + str(multiplier)
 
-func _on_danger_zone_body_entered(body: Node2D) -> void:
+func _on_danger_zone_body_entered(_body: Node2D) -> void:
 	_decrement_lives(1)
 	if lives == 0:
 		_start_game_over()

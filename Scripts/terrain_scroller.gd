@@ -2,7 +2,7 @@ extends TileMapLayer
 
 var counter: int = 0
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	# every frame, move the terrain one pixel to the left
 	position.x -= 1
 	counter += 1

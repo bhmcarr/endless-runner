@@ -17,3 +17,8 @@ res://Scenes/multiplier_powerup.tscn
 res://Scenes/flight_powerup.tscn
 res://Scenes/heart_powerup.tscn
 res://Scenes/heart_powerup.gd
+res://Scenes/flight_powerup.gd
+res://Scenes/multiplier_powerup.gd
+res://Scripts/obstacle.gd
+res://Scenes/score_zone.gd
+res://Scripts/terrain_scroller.gd

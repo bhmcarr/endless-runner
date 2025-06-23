@@ -29,7 +29,6 @@ normal = Vector2(1, 0)
 script = ExtResource("1_jjgbg")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_344ge")
@@ -75,6 +74,7 @@ offset_right = 131.0
 offset_bottom = 9.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_right = 160.0
 offset_bottom = 144.0
 color = Color(0.545098, 0.67451, 0.0588235, 1)
