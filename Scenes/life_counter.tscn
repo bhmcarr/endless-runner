@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bla0l67bpgxkk"]
+
+[ext_resource type="Texture2D" uid="uid://kxow5x0fvbbc" path="res://Assets/heart.png" id="1_jlagv"]
+[ext_resource type="Script" uid="uid://v7tgof2ilh58" path="res://Scenes/life_counter.gd" id="1_pwhq1"]
+[ext_resource type="LabelSettings" uid="uid://bbic1gw144xts" path="res://Assets/label_settings.tres" id="2_pwhq1"]
+
+[node name="LifeCounter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pwhq1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_jlagv")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -4.0
+offset_right = 40.0
+offset_bottom = 7.0
+text = "x3"
+label_settings = ExtResource("2_pwhq1")
