@@ -10,11 +10,15 @@
 [ext_resource type="PackedScene" uid="uid://ctwiqgclke4qk" path="res://Scenes/UI/retry_menu.tscn" id="5_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://cpkjxy6todtvl" path="res://Scenes/gameplay_message.tscn" id="6_6iyac"]
 [ext_resource type="PackedScene" uid="uid://d0mfd66keqq2u" path="res://Scenes/powerup_spawner.tscn" id="9_ynf5e"]
-[ext_resource type="PackedScene" uid="uid://dnh540la8wrsr" path="res://Scenes/flight_powerup.tscn" id="10_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://ctvvem5xhapbj" path="res://Scenes/powerup_spawn_point.tscn" id="10_hptm8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6bp64"]
 font = ExtResource("2_21xkr")
+font_color = Color(0.188235, 0.384314, 0.188235, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6iyac"]
+font = ExtResource("2_21xkr")
+font_size = 6
 font_color = Color(0.188235, 0.384314, 0.188235, 1)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_344ge"]
@@ -24,6 +28,7 @@ normal = Vector2(1, 0)
 script = ExtResource("1_jjgbg")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_344ge")
@@ -38,6 +43,15 @@ size_flags_horizontal = 4
 text = "0"
 label_settings = SubResource("LabelSettings_6bp64")
 script = ExtResource("3_6bp64")
+
+[node name="Multiplier" type="Label" parent="CanvasLayer"]
+offset_left = 2.0
+offset_top = 18.0
+offset_right = 160.0
+offset_bottom = 41.0
+size_flags_horizontal = 4
+text = "x1"
+label_settings = SubResource("LabelSettings_6iyac")
 
 [node name="RetryMenu" parent="CanvasLayer" instance=ExtResource("5_ynf5e")]
 visible = false
@@ -54,7 +68,6 @@ grow_vertical = 1
 [node name="GameplayMessage" parent="CanvasLayer" instance=ExtResource("6_6iyac")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 offset_right = 160.0
 offset_bottom = 144.0
 color = Color(0.545098, 0.67451, 0.0588235, 1)
@@ -80,7 +93,6 @@ shape = SubResource("WorldBoundaryShape2D_344ge")
 position = Vector2(60, 48)
 
 [node name="PowerupSpawner" parent="." instance=ExtResource("9_ynf5e")]
-powerup_scene = ExtResource("10_d1ilt")
 
 [node name="PowerupSpawnPoint" parent="PowerupSpawner" instance=ExtResource("10_hptm8")]
 position = Vector2(168, 16)

@@ -22,3 +22,6 @@ res://Scenes/powerup_spawn_point.gd
 res://Scripts/gameplay_message.gd
 res://Scenes/gameplay_message.tscn
 res://Scenes/gameplay_message.gd
+res://Scenes/score_zone.gd
+res://Scenes/multiplier_powerup.tscn
+res://Scenes/multiplier_powerup.gd
