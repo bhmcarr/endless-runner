@@ -25,3 +25,5 @@ res://Scenes/gameplay_message.gd
 res://Scenes/score_zone.gd
 res://Scenes/multiplier_powerup.tscn
 res://Scenes/multiplier_powerup.gd
+res://Scenes/heart_powerup.tscn
+res://Scenes/heart_powerup.gd

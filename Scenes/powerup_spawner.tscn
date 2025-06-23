@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0mfd66keqq2u"]
+[gd_scene load_steps=5 format=3 uid="uid://d0mfd66keqq2u"]
 
 [ext_resource type="Script" uid="uid://dtoemfg1oml5i" path="res://Scenes/powerup_spawner.gd" id="1_cuwxn"]
 [ext_resource type="PackedScene" uid="uid://dnh540la8wrsr" path="res://Scenes/flight_powerup.tscn" id="2_wtmao"]
 [ext_resource type="PackedScene" uid="uid://cyb1cm7bv77ox" path="res://Scenes/multiplier_powerup.tscn" id="3_aa6ko"]
+[ext_resource type="PackedScene" uid="uid://bcsmlv676276d" path="res://Scenes/heart_powerup.tscn" id="4_aa6ko"]
 
 [node name="PowerupSpawner" type="Node2D"]
 script = ExtResource("1_cuwxn")
-powerup_scenes = Array[PackedScene]([ExtResource("2_wtmao"), ExtResource("3_aa6ko")])
+powerup_scenes = Array[PackedScene]([ExtResource("2_wtmao"), ExtResource("3_aa6ko"), ExtResource("4_aa6ko")])
 
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 10.0

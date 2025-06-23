@@ -41,6 +41,5 @@ func activate_flying():
 	current_state = states.FLYING
 	powerup_timer.start()
 	
-
 func _on_powerup_timer_timeout() -> void:
 	current_state = states.NORMAL

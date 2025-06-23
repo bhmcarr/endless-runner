@@ -80,8 +80,10 @@ func _show_milestone_message():
 	elif current_score >= 9001:
 		gameplay_message.show_message("YOUR SCORE, IT'S OVER NINE THOUSAND!!!!")
 
-func _handle_powerup_collected(new_message: String):
+func _handle_powerup_collected(new_message: String, action: String):
 	gameplay_message.show_message(new_message)
+	if action == "respawn":
+		_spawn_player()
 	
 func _handle_multiplier_collected(amount: int):
 	multiplier += amount
