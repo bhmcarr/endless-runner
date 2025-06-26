@@ -75,8 +75,9 @@ func _start_game_over():
 	retry_menu.show_score(current_score, best_score)
 	
 func _increment_lives(amount: int):
-	lives += amount
-	life_counter.update_life_amount(lives)
+	if lives < 99:
+		lives += amount
+		life_counter.update_life_amount(lives)
 
 func _decrement_lives(amount: int):
 	lives -= amount

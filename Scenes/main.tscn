@@ -68,9 +68,9 @@ grow_vertical = 1
 [node name="GameplayMessage" parent="CanvasLayer" instance=ExtResource("6_6iyac")]
 
 [node name="LifeCounter" parent="CanvasLayer" instance=ExtResource("7_6iyac")]
-offset_left = 131.0
+offset_left = 122.0
 offset_top = 9.0
-offset_right = 131.0
+offset_right = 122.0
 offset_bottom = 9.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
